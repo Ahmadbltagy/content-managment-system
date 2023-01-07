@@ -10,6 +10,11 @@ class Post{
     return $mysqli->query("SELECT * FROM posts WHERE post_id=$postId"); 
   }
 
+  static function showAPostByCat($cat_id){
+    global $mysqli;
+    return $mysqli->query("SELECT * FROM posts WHERE post_category_id = $cat_id");
+  }
+
   static function addPost(array $postData){
     global $mysqli;
     $postData['post_content'] = addslashes($postData['post_content']); 
@@ -28,6 +33,7 @@ class Post{
     $mysqli->query("DELETE FROM posts WHERE post_id=$postId");
     header("Location: posts.php");
   }
+
 
 }
 

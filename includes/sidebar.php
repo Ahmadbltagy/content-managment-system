@@ -28,8 +28,9 @@
                             <?php 
                                 if($result = $mysqli->query("SELECT * FROM categories")){
                                 while($row = $result->fetch_assoc()){
-                                  echo "<li><a href='#'>{$row['cat_title']}</a></li>";                          }
-                                }   
+                                  echo "<li><a href='../categories.php?cat_id={$row['cat_id']}'>{$row['cat_title']}</a></li>";   
+                                }
+                            }   
                             ?>
                             </ul>
                         </div>

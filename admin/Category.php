@@ -64,6 +64,7 @@ class Category {
     return $mysqli->query("SELECT * FROM categories WHERE cat_id=$id");
   }
 
+
 }
 
 
